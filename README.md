@@ -30,4 +30,4 @@ next run
 The application runs on port 8000.
 It is available at http://localhost:8000/.
 
-You can find API docs at http://127.0.0.1:8000/api/v1/swagger/
+You can find API docs at http://localhost:8000/api/v1/swagger/
