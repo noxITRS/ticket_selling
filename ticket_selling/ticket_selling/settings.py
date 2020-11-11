@@ -38,11 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_yasg',
     'django_celery_results',
     'django_celery_beat',
     'api_v1',
     'events',
-    'tickets'
+    'tickets',
+    'stats'
 ]
 
 MIDDLEWARE = [
