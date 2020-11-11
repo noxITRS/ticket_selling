@@ -14,7 +14,9 @@ and poetry for package management:
 https://python-poetry.org/docs/
 
 find poetry.lock file in project directory and run:
-```poetry install```
+```
+poetry install
+```
 
 get docker from:
 https://www.docker.com/get-started
@@ -22,10 +24,16 @@ https://www.docker.com/get-started
 after installing docker run:
 ```docker run -d -p 5672:5672 rabbitmq```
 
-next run 
-```poetry run python manage.py migrate```
-```poetry run python manage.py runserver```
-```poetry run celery -A ticket_selling worker -B -E -l info```
+next run:
+```
+poetry run python manage.py migrate
+```
+```
+poetry run python manage.py runserver
+```
+```
+poetry run celery -A ticket_selling worker -B -E -l info
+```
 
 The application runs on port 8000.
 It is available at http://localhost:8000/.
