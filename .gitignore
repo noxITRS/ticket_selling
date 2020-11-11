@@ -2,6 +2,13 @@
 # Created by https://www.toptal.com/developers/gitignore/api/vscode,django,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=vscode,django,python
 
+# CELERY LOCAL DB
+
+celerybeat-schedule.db
+
+### DS_STORE on macOS ###
+.DS_STORE
+
 ### Django ###
 *.log
 *.pot
@@ -212,6 +219,7 @@ dmypy.json
 # profiling data
 
 ### vscode ###
+.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
