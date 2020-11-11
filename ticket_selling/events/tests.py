@@ -4,9 +4,9 @@ from datetime import datetime
 
 from events.models import Event
 from events.serializers import EventSerializer
+from ticket_selling.urls import API_BASE_URL
 
-
-class GetEventInfo(APITestCase):
+class GetEventInfoTest(APITestCase):
     client = APIClient()
 
     def setUp(self):
@@ -23,14 +23,14 @@ class GetEventInfo(APITestCase):
             )
 
     def test_get_info_about_events(self):
-        response = self.client.get('/events/')
+        response = self.client.get(f'/{API_BASE_URL}events/')
         queryset = Event.objects.all()
         serializer = EventSerializer(queryset, many=True)
         self.assertEqual(response.data, serializer.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_get_info_about_specific_event(self):
-        response = self.client.get(f'/events/{self.true_first_event.pk}/')
+        response = self.client.get(f'/{API_BASE_URL}events/{self.true_first_event.pk}/')
         queryset = Event.objects.get(pk=self.true_first_event.pk)
         serializer = EventSerializer(queryset)
         self.assertEqual(response.data, serializer.data)
@@ -38,5 +38,5 @@ class GetEventInfo(APITestCase):
 
     def test_get_info_about_not_existing_event(self):
         random_uuid = 'e82501a1-f0ff-43e2-88cb-6c09f85086f8'
-        response = self.client.get(f'/events/{random_uuid}/')
+        response = self.client.get(f'/{API_BASE_URL}events/{random_uuid}/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
